@@ -36,5 +36,6 @@
 #include <sqlpp11/data_types/time_of_day.h>
 #include <sqlpp11/data_types/time_point.h>
 #include <sqlpp11/data_types/no_value.h>
+#include <sqlpp11/data_types/decimal.h>
 
 #endif

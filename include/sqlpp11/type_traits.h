@@ -95,10 +95,14 @@ namespace sqlpp
   template <typename T>
   using is_time_point_t = std::is_same<value_type_of<T>, time_point>;
 
+  struct decimal;
+  template <typename T>
+  using is_decimal_t = std::is_same<value_type_of<T>, decimal>;
+
   // joined data type
   template <typename T>
   using is_numeric_t =
-      logic::any_t<is_integral_t<T>::value, is_unsigned_integral_t<T>::value, is_floating_point_t<T>::value>;
+      logic::any_t<is_integral_t<T>::value, is_unsigned_integral_t<T>::value, is_floating_point_t<T>::value, is_decimal_t<T>::value>;
 
   template <typename T>
   using is_numeric_not_unsigned_t =

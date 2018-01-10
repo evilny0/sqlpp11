@@ -28,6 +28,7 @@
 #define SQLPP_DATABASE_BIND_RESULT_H
 
 #include <memory>
+#include <boost/multiprecision/gmp.hpp>
 
 namespace sqlpp
 {
@@ -82,6 +83,7 @@ namespace sqlpp
       // More will be added over time
       void _bind_boolean_result(size_t index, signed char* value, bool* is_null);
       void _bind_floating_point_result(size_t index, double* value, bool* is_null);
+      void _bind_decimal_result(size_t index, boost::multiprecision::mpf_float_50* value, bool* is_null);
       void _bind_integral_result(size_t index, int64_t* value, bool* is_null);
       void _bind_text_result(size_t index, const char** text, size_t* len);
       ...
